@@ -1,0 +1,36 @@
+{% extends 'layout.html' %} {% block content %}
+
+<div class="d-flex flex-column justify-content-center align-items-center mt-5">
+  <h1 class="display-2">Record audio</h1>
+  <div style="width: 60%; margin-top: 1rem">
+    <div id="controls" class="mt-3 mb-5" style="text-align: center">
+      <button class="btn btn-primary m-2" id="recordButton">Record</button>
+      <button class="btn btn-secondary m-2" id="pauseButton" disabled>
+        Pause
+      </button>
+      <button class="btn btn-danger m-2" id="stopButton" disabled>Stop</button>
+    </div>
+    <div id="formats" style="text-align: center; margin-bottom: 2rem">
+      <h5>Format: start recording to see sample rate</h5>
+    </div>
+    <p style="text-align: center"><strong>Recordings:</strong></p>
+    <ol
+      class="d-flex flex-column justify-content-center align-items-center"
+      style="text-align: center"
+      id="recordingsList"
+    ></ol>
+
+    <div class="mt-5">
+      <a href="/result">
+        <div class="d-flex justify-content-center">
+          <button type="submit" class="btn btn-success">Run ML model</button>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+<script src="/static/js/script.js"></script>
+
+{% endblock content %}
